@@ -54,8 +54,12 @@ function makeSound(key) {
     }
 }
 
+// Adding a class to the button that will change the view for a split second 
+// and then removing it.
 function buttonAnimation (currentKey) {
     let activeButton = document.querySelector("." + currentKey);
-    activeButton.classList.add("active");
-
-}
+    activeButton.classList.add("pressed");
+    setTimeout(function() {
+        activeButton.classList.remove("pressed");
+    }, 100)
+};
